@@ -45,7 +45,7 @@ class Vector2(object):
     def __mul__(self,other):
         return Vector2(other*self.x,other*self.y)
 
-    def __div__(self,other):
+    def __truediv__(self,other):
         if other != 0:
             return Vector2(self.x/other,self.y/other)
         else:
@@ -58,14 +58,17 @@ if __name__ == "__main__":
     v1 = Vector2(1,2)
     v2 = Vector2(3,4)
 
-    v3 = (v1 + v2)/2
+    v3 = (v1 + v2)
 
     v4 = v2 - v1
+    v5 = v3 / 2.0
 
     print(v1)
     print(v2)
+    print(v2*3)
     print(v3)
     print(v4)
+    print(v5)
 
     print(str(v4.get_len()))
     print(v3.getpos())
